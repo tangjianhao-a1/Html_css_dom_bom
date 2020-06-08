@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body { background-color: rgb(20, 20, 119); }
+        .boxx {
+            text-align: center;
+            font-size: 80px；
+
+        }
+
+        .one {
+            color: skyblue;
+        }
+
+        .two {
+              color: lawngreen;
+            
+        }
+
+        .shree {
+            color: blueviolet;
+        }
+
+        .four {
+            color: forestgreen;
+        }
+
+        .five {
+            color: lightcoral;
+        }
+
+        .six {
+            color: tan;
+        }
+
+        .seven {
+            color: yellowgreen;
+        }
+
+        h2 {
+            color: indigo;
+            text-align: center;
+            font-size: 100px;
+        }
+        .bbq { background-color: rgb(12, 4, 2);
+                  }
+    </style>
+
+</head>
+
+<body>
+    <div class="bbq boxx">
+
+    <h2>秦皇扫六合</h2>
+    <div class="one boxx">秦皇扫六合，虎视何雄哉。飞剑决浮云，诸侯尽西来。</div>
+    <div class="two boxx">明断自天启，大略驾群才。收兵铸金人，函谷正东开。</div>
+    <div class="shree boxx">铭功会稽岭，骋望琅琊台。刑徒七十万，起土骊山隈。</div>
+    <div class="four boxx">尚采不死药，茫然使心哀。连弩射海鱼，长鲸正崔嵬。</div>
+    <div class="five boxx">额鼻象五岳，扬波喷云雷。鬐鬣蔽青天，何由睹蓬莱。</div>
+    <div class="seven boxx">徐巿载秦女，楼船几时回。但见三泉下，金棺葬寒灰。</div>
+</div>
+</body>
+
+</html>
