@@ -86,15 +86,17 @@ li {
 }
 
 .inputs input {
+    float: left;
     height: 46px;
     width: 560px;
     border-radius: 10px;
     border: 2px solid #4e6ef2;
-    border-right: none;
+    border-right: 0；
 }
 
 .inputs button {
-    height: 47px;
+    float: left;
+    height: 50px;
     width: 90px;
     margin-left: -13px;
     background-color: #4e6ef2;
