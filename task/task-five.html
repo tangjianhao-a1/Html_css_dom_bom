@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+    .box {
+      position: relative;
+      margin: 50px auto;
+    }
+    .box span {
+      border: 10px solid transparent;  
+      border-bottom-color:red;
+      right: 20px;
+      top: -20px;
+    }
+    .jd {
+        position: relative;
+        margin: 250px auto;  
+    }
+    .jd span {
+      border: 10px solid transparent; 
+      border-left-color:red;
+      bottom: 20px;
+      right: -20px;
+    }
+    .box,.jd{
+        width: 235px;
+        height: 156px;
+        background-color:red;
+    }
+    .box span,.jd span {
+      position:absolute;
+      width: 0;
+      height: 0;
+      line-height: 0;
+      font-size: 0;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="box">
+    <span></span>
+  </div>
+    <div class="jd">
+    <span></span>
+  </div>
+  
+</body>
+</html>
