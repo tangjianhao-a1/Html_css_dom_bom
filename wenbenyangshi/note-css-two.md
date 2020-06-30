@@ -226,7 +226,74 @@ div {
     line-height:0;  
     font-size:0;  
     border:50px  solid  transparent;  
-    border-left-color:pink;}   
+    border-left-color:pink;}     
+# 4.CSS用户界面样式  
+## 4-1.鼠标样式cursor  
+li { cursor:pointer;}      
+设置或检索在对象上移动的鼠标指针采用何种系统定义的光标形状。  
+属性值|描述  
+-|-
+default|小白 默认
+pointer|小手  
+move|移动  
+text|文本  
+not-allowed|禁止    
+## 4.2轮廓线outline  
+给表单添加outline：0；outline：none；样式之后，就可以去掉默认的蓝色边框。  
+## 4-3.防止拖拽文本域resize   
+实际开发中，我们文本域右下角是不可以拖拽的。  
+textarea { resize：none；}  
+# 5.vertical-align属性应用  
+css的vertical-align属性使用场景：经常用于设置图片或者表单（行内块元素）和文字垂直对齐。  
+官方解释：用于设置一个元素的垂直对齐方式，但是它只针对于行内元素或者行内块元素有效。  
+语法：  
+vertical-align：baseline|top|middle|bottom  
+值|描述  
+-|-
+baseline|默认，元素放置在父元素的基线上。  
+top|把元素的顶端与行中最高元素的顶端对齐。  
+middle|把此元素放置在父元素的中部。  
+bottom|把元素的顶端与行中最低的元素的顶端对齐。  
+## 5-1.图片，表单和文字对齐  
+图片，表单都属于行内块元素，默认的vertical-align是基线对齐。  
+此时可以给图片，表单这些行内块元素的vertical-align属性设置为middle就可以让文字和图片垂直居中对齐了。  
+## 5-2解决图片底部默认空白缝隙问题  
+bug：图片底侧会有一个空白缝隙，原因是行内块元素会和文字的基线对齐。  
+主要解决方法有两种：  
+1.给图片添加vertical-align：middle|top|bottom等。（提倡使用的）  
+2.把图片转换为块级元素display：block；  
+# 6.溢出的文字省略号显示  
+### 1.单行文本溢出显示省略号--必须满足三个条件  
+/*1. 先强制一行内显示文本 */  
+white-space：nowrap；（默认nomal自动换行）  
+/*2.超出的部分隐藏 */   
+overflow：hidden；  
+/ *3.文字用省略号代替超出的部分 */  
+text-overflow:ellipsis;   
+### 2.多行文本溢出显示省略号  
+多行文本溢出显示省略号，有较大兼容性问题，适合于webkit浏览器或移动端（移动端大部分是webkit内核）  
+overflow：hidden；  
+text-overflow：ellipsis；  
+/*弹性伸缩盒子模型显示 */  
+display：-webkit-box；  
+/* 限制在一个块元素显示的文本的行数 */  
+
+-webkit-line-clamp：2；  
+/* 设置或检索伸缩盒对象的子元素的排列方式 */  
+
+-webkit-box-orient：vertical；  
+更推荐让后台人员来做这个效果，因为后台人员可以设置显示多少个字，操作更简单。  
+# 7.常见布局技巧  
+### 巧妙利用一个技术更快更好的布局：  
+## 1.margin负值运用  
+1.让每个盒子margin往左侧移动-1px正好压住相邻盒子边框  
+2.鼠标经过某个盒子的时候，提高当前盒子的层级即可（如果没有定位，则加相对定位（保留位置），如果有定位，则加z-index）  
+## 2.文字围绕浮动元素  
+巧妙利用元素不会压住文字的特性，  
+
+
+
+
 
 
 
