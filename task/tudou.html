@@ -19,7 +19,8 @@
             width: 100%
         }
 
-        .bg {
+        .box::after {
+            content: "";
             position: absolute;
             top: 0;
             width: 444px;
@@ -28,7 +29,7 @@
             display: none;
         }
         
-        .box:hover .bg {
+        .box:hover::after {
             display: block;
         }
     </style>
@@ -37,7 +38,7 @@
 <body>
     <div class="box">
         <img src="../img/toudou-1.png">
-        <div class="bg"></div>
+        
         </div>
     </div>
 </body>
