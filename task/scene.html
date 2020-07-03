@@ -6,32 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-      div {
-          position: relative;
-          width: 249px;
-          height: 35px;
-          border: 1px solid #000000;
-      }
-      div::after {
-          content: "";
-          position: absolute;
-          top: 8px;
-          right: 15px;
-          width: 10px;
-          height: 10px;
-          border-right: 1px solid #000;  
-          border-bottom: 1px solid #000;
-          transform: rotate(45deg);
-          transition: all 0.2s ease 0.3s;
-      }
-      div:hover::after {
-          transform: rotate(225deg);
-      }
+        @keyframes move {
+            0% {
+                transform: translate(0，0);
+            }
+
+            25% {
+                transform: translate(1000px, 0);
+            }
+
+            50% {
+                transform: translate(1000px, 500px);
+            }
+
+            75% {
+                transform: translate(0, 500px);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+         div{
+             width: 1200px;
+             height: 700px;
+             border: 100px solid rosybrown;
+            
+         }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 100px;
+            border: 1px solid red;
+            /* animation-name: move;  
+        animation-duration: 3s; 
+        animation-timing-function: linear;
+        animation-delay: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate; */
+            animation: move 3s linear 1s infinite alternate;
+        }
     </style>
 </head>
 
 <body>
-  <div></div>
+    <div>
+        <div class="box"></div>
+    </div>
 </body>
 
 </html>

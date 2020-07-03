@@ -226,8 +226,8 @@ transition：要过渡的属性   花费时间   运动曲线   何时开始；
 2D移动是2D转换里面的一种功能，可以改变元素在页面中的位置，类似定位。  
 1.语法  
 transform：translate（x，y）；或者分开写  
-transfrom：translate（n）；  
-transfrom：translate（n）；  
+transfrom：translateX（n）；  
+transfrom：translateY（n）；  
 2.重点  
 - 定义2D转换中的移动，沿着X和Y轴移动元素  
 - translate最大的优点：不会影响到其他元素的位置  
@@ -242,7 +242,97 @@ transform：rotate（度数）
 2.重点   
 - rotate里面跟度数，单位是deg比如rotate（45deg）  
 - 角度为正时，顺时针，负时，为逆时针  
-- 默认旋转的中心点是元素的中心点
+- 默认旋转的中心点是元素的中心点  
+ ---   
+ ## 4-4.2D转换中心点transform-origin  
+ 我们可以设置转换的中心点  
+ 1.语法  
+ transform-origin： x y；   
+ 2.重点  
+ - 注意后面的参数x和y用空格隔开  
+ - x y默认转换的中心点元素的中心点（50% 50%）  
+ - 还可以给x y 设置 像素 或者 方位名词 （top  bottom  left  right  center）     
+ ## 4-5.2D转换之缩放scala  
+ 缩放，顾名思义，可以放大和缩小。只要给元素添加上了这个属性就能控制它放大还是缩小  
+ 1.语法  
+ transform： scale（x，y）；  
+ 2.注意  
+ - 注意其中的x和y用逗号分开  
+ - transform：scale（1，1）：宽和高都放大了一倍，相当于没有放大  
+ - transform：scale（2，2）宽和高都放大了2倍  
+ - transform：scale（2）只写一个参数，第二个参数则和第一个参数一样，相当于scale（2，2）  
+ - transform：scale（0.5，0.5）：缩小  
+ - slace缩放最大的优势：可以设置转换中心点缩放。默认以中心点缩放，而且比影响其他盒子  
+
+---  
+## 4-6 2D转换综合写法  
+注意：  
+1. 同时使用多个转换，其格式为： transform：translate（）rotate（）scale（）...等  
+2. 其顺序会影响转换的效果。（先旋转会改变坐标效果）  
+3. 当我们同时有位移和其他属性的时候，要记得位移放到最前  
+
+---
+## 1-7.2D转换总结  
+- 转换transfrom我们简单理解就是变形有2D和3D之分  
+- 我们暂且学了三个分别是位移，旋转和缩放  
+- 2D移动transform（x，y）最大的优势是不影响其他盒子，里面参数用%，是相对于自身宽度和高度来计算的  
+- 可以分开写比如translateX(x)和transformY（y）  
+- 2D旋转rotate（度数）  可以实现旋转元素  度数的单位是deg  
+- 2D缩放sacle（x，y）里面参数是数字，不要跟单位，可以是小数  最大的优势是不影响其他盒子  
+- 设置转换中心点transform-origin：x y；参数可以是百分比，像素或者是方位名词  
+- 当我们进行综合写法，同时有位移和其他属性的时候，记得要将位移放到最前面  
+---
+
+# 5.动画
+动画（animation）是CSS3具有颠覆性的特征之一，可通过设置多个节点来精确控制一个或一组动画，常用来实现复杂的动画效果。  
+## 5-1.动画的基本使用  
+制作动画分为两步：  
+1.先定义动画  
+2.在使用（调用）动画  
+### 1.用keyframes定义动画（类似定义类选择器）  
+@keyframes 动画名称 {    
+0%{  
+        width：100px；
+    }    
+    100%{  
+        width：200px；
+    }  
+ }  
+
+动画序列  
+
+- 0%是动画的开始，100%是动画的完成。这样的规定就是动画序列。  
+- 在@keyframes中规定某项CSS样式，就能创建由当前样式逐渐改为新样式的动画效果。  
+- 动画是使元素从一种样式逐渐变化为另一种样式的效果，可以改变任意多的样式任意多的次数。  
+- 请用百分比来规定变化发生的时间，或者用关键词"from"和"to",等同于0%和100%。     
+### 2.元素使用动画  
+div {  
+    width: 200px;  
+    height: 200px;  
+    background-color: aqua;  
+    margin:100px  quto;  
+    /* 调用动画 */  
+    animation-name: 动画名称；  
+    /* 持续时间 */  
+    animation-duration: 持续时间；  
+    }  
+## 5-2.动画常用属性  
+属性|描述  
+-|-
+@keyframes|规定动画  
+animation|所有动画属性的简写属性，除了animation-play-state属性。  
+animation-name|规定@keyframes动画的名称（必须的）  
+animation-duration|规定动画完成一个周期所花费的秒或毫秒，默认是0，（必须的）  
+animation-timing-function|规定动画的速度曲线，默认是"ease".  
+animation-delay|规定动画何时开始，默认是0.  
+animation-iteration-count|规定动画播放的次数，默认是1，还有infinite  
+animation-direction|规定动画是否在下一周期逆向播放，默认是"normal",alternate逆播放  
+animation-play-state|规定动画是否正在运行或暂停，默认是"running",还有"pause',  
+animation-fill-mode|规定动画结束后状态，保持forwards回到起始backwards    
+## 5-3.动画简写属性  
+animation：动画名称 持续时间  运动曲线 何时开始  播放次数  是否反方向 动画起始或者结束的状态；  
+animation：name 5s linear 2s  infinite  alternate；
+
 
 
 
