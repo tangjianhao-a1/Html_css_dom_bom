@@ -331,8 +331,54 @@ animation-play-state|规定动画是否正在运行或暂停，默认是"running
 animation-fill-mode|规定动画结束后状态，保持forwards回到起始backwards    
 ## 5-3.动画简写属性  
 animation：动画名称 持续时间  运动曲线 何时开始  播放次数  是否反方向 动画起始或者结束的状态；  
-animation：name 5s linear 2s  infinite  alternate；
+animation：name 5s linear 2s  infinite  alternate；  
+## 5-4速度曲线细节   
+anmation-timing-function：规定动画的速度曲线，默认是ease
+值|描述  
+-|-  
+linear|动画从头到尾的速度是相同的，匀速  
+ease|默认。动画以低速开始，然后加快，在结束前变慢。  
+ease-in|动画以低速开始，  
+ease-out|动画以低速结束。  
+ease-in-out|动画以低速开始和结束  
+steps（)|指定了时间函数中的间隔数量（步长）  
+# 6.3D转换   
+我们生活的环境是3D的，照片就是3D物体在2D平面呈现的例子。  
+### 有什么特点  
+- 近大远小  
+- 物体后面遮挡不可见  
 
+当我们在网页上构建3D效果的时候参考这些特点就能产出3D效果。  
+三维坐标其实就是立体空间，立体空间是由3个轴共同组成的。   
+- x轴：水平向右   注意：x右边是正值，右边是负值  
+- y轴：垂直向下   注意：y下面是正值，上面是负值  
+- z轴：垂直屏幕   注意：往外面是正值，往里面是负值    
+## 6-2.3D移动translate3d  
+3D移动在2D移动的基础上多加了一个可以移动的方向，就是z轴方向。  
+- transform：translateX（100px）：仅仅是在x轴移动  
+- transform：translateY（100px）：仅仅是在Y轴移动  
+- transform：translateZ（100px）：仅仅是在Z轴上移动（注意：translateZ一般用px单位）  
+- transform：translate3d（x，y，z）其中x，y，z分别指要移动的轴的方向的距离
+## 6-3 透视perspective  
+在2D平面产生近大远小视觉立体，但是只是效果二维的  
+- 如果想要在网页产生3D效果需要透视（理解成3D物体投影在2D平面内）。  
+- 模拟人类的视觉位置，可认为安排一只眼睛去看  
+- 透视我们也称为视距：视距就是人的眼睛到屏幕的距离  
+- 距离视觉点越近的在电脑平面成像越大，越远成像越小   
+- 透视的单位是像素   
+### 透视写在被观察元素的父盒子上面的  
+d：就是视距，视距就是一个距离人的眼睛到屏幕的距离。  
+z：就是z轴，物体距离屏幕的距离，z轴越大（正值）我们看到的物理就越大。  
+## 6-4 translateZ  
+translform：translateZ（100px）：仅仅是在Z轴上移动。  
+有了透视，就能看到translateZ引起的变化  
+## 6-5 3D旋转rotate3d   
+3D旋转指可以让元素在三维平面内沿着X轴，y轴，z轴或者自定义轴进行旋转。  
+### 语法  
+- transform：rotaleX（45deg）：沿着X轴正方向旋转45度  
+- transform：rotaleY（45deg）：沿着y轴正方向旋转45度  
+- transform：rotaleZ（45deg）：沿着Z轴正方向旋转45度  
+- transform：rotate3d（x，y，z，deg）：沿着自定义轴旋转deg为角度（了解即可）
 
 
 
