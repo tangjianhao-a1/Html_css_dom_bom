@@ -6,64 +6,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-         body { background-color: black; }
-        .boxx {
-            text-align: center;
-            font-size: 80px；
-
+        body {
+            perspective: 1000px;
+            background: rgba(210, 180, 140, 0.6)
         }
 
-        .one {
-            color: skyblue;
+        section {
+            position: relative;
+            width: 224px;
+            height: 296px;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            animation: rotate 8s linear infinite;
+            background: url(../img/tjh1.png) no-repeat;
         }
 
-        .two {
-              color: lawngreen;
-            
+        @keyframes rotate {
+            0% {
+                transform: rotateY(0);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
         }
 
-        .shree {
-            color: blueviolet;
+        @keyframes w {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 360px;
+            }
         }
 
-        .four {
-            color: forestgreen;
+        section div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
-        .five {
-            color: lightcoral;
+        section:hover {
+            animation-play-state: paused;
         }
 
-        .six {
-            color: tan;
+        section div:nth-child(1) {
+            transform: translateZ(300px);
+            background: url(../img/LXQ.png) no-repeat;
         }
 
-        .seven {
-            color: yellowgreen;
+        section div:nth-child(2) {
+            transform: rotateY(60deg) translateZ(300px);
+            background: url(../img/LXQ1.png) no-repeat;
         }
 
-        h2 {
-            color: indigo;
-            text-align: center;
-            font-size: 100px;
+        section div:nth-child(3) {
+            transform: rotateY(120deg) translateZ(300px);
+            background: url(../img/LXQ2.png) no-repeat;
         }
-        .bbq { background-color: rgb(12, 4, 2);
-                  }
+
+        section div:nth-child(4) {
+            transform: rotateY(180deg) translateZ(300px);
+            background: url(../img/LXQ3.png) no-repeat;
+        }
+
+        section div:nth-child(5) {
+            transform: rotateY(240deg) translateZ(300px);
+            background: url(../img/LXQ4.png) no-repeat;
+        }
+
+        section div:nth-child(6) {
+            transform: rotateY(300deg) translateZ(300px);
+            background: url(../img/LXQ5.png) no-repeat;
+        }
+
+        .box {
+            overflow: hidden;
+            margin: 100px auto;
+            font-size: 40px;
+            width: 0;
+            height: 50px;
+            white-space: nowrap;
+            color: black;
+            animation: w 4s steps(9) infinite forwards;
+            text-shadow: 0px 0px 3px blueviolet;
+
+        }
     </style>
 
 </head>
 
 <body>
-   
+    <div class="box">我和大脸狗的故事</div>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
 
-    <h2>秦皇扫六合</h2>
-    <div class="one boxx">秦皇扫六合，虎视何雄哉。飞剑决浮云，诸侯尽西来。</div>
-    <div class="two boxx">明断自天启，大略驾群才。收兵铸金人，函谷正东开。</div>
-    <div class="shree boxx">铭功会稽岭，骋望琅琊台。刑徒七十万，起土骊山隈。</div>
-    <div class="four boxx">尚采不死药，茫然使心哀。连弩射海鱼，长鲸正崔嵬。</div>
-    <div class="five boxx">额鼻象五岳，扬波喷云雷。鬐鬣蔽青天，何由睹蓬莱。</div>
-    <div class="seven boxx">徐巿载秦女，楼船几时回。但见三泉下，金棺葬寒灰。</div>
-</div>
+
+    </section>
 </body>
 
 </html>

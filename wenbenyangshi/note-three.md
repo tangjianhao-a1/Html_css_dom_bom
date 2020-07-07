@@ -378,7 +378,18 @@ translform：translateZ（100px）：仅仅是在Z轴上移动。
 - transform：rotaleX（45deg）：沿着X轴正方向旋转45度  
 - transform：rotaleY（45deg）：沿着y轴正方向旋转45度  
 - transform：rotaleZ（45deg）：沿着Z轴正方向旋转45度  
-- transform：rotate3d（x，y，z，deg）：沿着自定义轴旋转deg为角度（了解即可）
+- transform：rotate3d（x，y，z，deg）：沿着自定义轴旋转deg为角度（了解即可）  
+
+xyz是表示旋转轴的矢量，是标示你是否希望沿着该轴旋转，最后一个标示旋转的角度。  
+
+- transform：rotate3d（1，0，0，45deg）就是沿着x轴旋转45deg  
+- transform：rotate3d（1，1，0，45deg）就是沿着对角旋转45deg  
+## 6-6 3D呈现tranform-style  
+- 控制子元素是否开启三维立体环境  
+- transform-style：flat子元素不开启3D立体空间，默认的  
+- transform-style：preserve-3d；子元素开启立体空间  
+- 代码写给父级，但是影响的是子盒子  
+- 这个属性很重要，后面必用
 
 
 
