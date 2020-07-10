@@ -240,7 +240,46 @@ Undefined|var a = null;声明了变量a 为空值|null
 
 现阶段我们只需要记住，在JS中八进制前面加0，十六进制前面加0x   
 ### 2.数字型范围  
-JavaScript中数值的最大和最小值  
+JavaScript中数值的最大和最小值    
+alert (Number.MAX_VALUE); // 1.7976931348623157e+308  
+alert (Number.MIN_VALUE);//5e-324    
+- 最大值：Number.MAX_VALUE,这个值为：1.7976931348623157e+308   
+- 最小值：Number.MIN_VALUE,这个值为：5e-32    
+### 3.数字型三个特殊值  
+- lnfinity，代表无穷大，大于任何数值  
+- -Infinity，代表无穷小，小于任何数值  
+- NaN,Not a number，代表一个非数值   
+### 4.isNaN()  
+用来判断一个变量是否为非数字的类型，返回true或者false     
+isNaN(x),x是数字，返回false，x是一个非数字类型，返回true，  
+var usrAge = 21；  
+var isok = isNaN(userAge);   
+console.log(isNum);  //false,21 不是一个非数字  
+var usrName = "andy"   
+consolo.log(isNaN(userName)); //true,"andy"是一个非数字   
+## 2-3 字符串型String  
+字符串型可以是引号中的任意文本，其语法为"双引号"和'单引号"  
+var strMsg = "我爱北京天安门~";  //使用双引号表示字符串  
+var strMsg2 = '我爱吃猪蹄~'; //使用单引号表示字符串  
+//常见错误    
+var strMsg3 = 我爱大肘子；  //报错，没使用引号，会被认为是js代码，但js没有这些语法   
+因为HTML标签里面的属性使用的是双引号，js这里我们更推荐使用单引号。   
+### 1.字符串引号嵌套  
+JS可以用单引号嵌套双引号，或者用双引号嵌套单引号(外双内单，外单内双)    
+2.字符串转义符  
+类似HTML里面的特殊字符，字符串中也有特殊字符，我们称之为转义符。  
+转义符都是\开头的，常用的转义符及其说明如下：  
+转义符|解释说明   
+-|-
+\n|换行符，n是newline的意思  
+\ \ | 斜杠\  
+\ '|' 单引号   
+\"|" 双引号   
+\t|tab缩进   
+\b|空格，b是blank的意思  
+酷热难耐，火辣的太阳底下，我挺拔的身姿，成为了最为独特的风景，我审视四周，这里，这是我的舞台，我就是天地间的王者，这一刻，我豪气冲天，终于大喊一声：“收破烂啦~’
+
+
 
 
 
