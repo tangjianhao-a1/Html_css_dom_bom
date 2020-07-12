@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>变量值转换以及数据类型总结</title>
     <script>
-        var num = 10;  
-        var str = num.toString();
-        console.log(typeof str);
-       /*  console.log(typeof str); */
-       /*  console.log(String(num)); */  
-       var num = 1;
-       console.log(typeof String(num));
-
-        
+      var kong;
+      var num1 = '唐建豪';
+      var num2 = '李晓琴';
+      kong = num1;
+      num1 = num2;
+      num2 = kong;
+      console.log(num1);
+      console.log(num2);
+      var name = prompt('请输入您的名字:');
+      var age = prompt('请输入您的年龄:');
+      var Gender = prompt('您的性别是：')
+      alert('您的姓名是:'+ name +'\n'+'您的年龄是:'+ age + '\n'+ '您的性别是：' + Gender);
+     
     </script>
 </head>
 <body>
