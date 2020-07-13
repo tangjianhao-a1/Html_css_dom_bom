@@ -4,10 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>变量交换值</title>
+  <title></title>
   <script>
- console.log(0&&0&&258&&379);
-  
+    // 算法：能被4整除且不能整除100的为闰年,或者能够被400整除的就是闰年
+  var year = prompt('请您输入年份：'); 
+  if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+    alert('您输入的年份是闰年：');
+  } else { 
+    alert('您输入的年份是平年');
+  };
   </script>
 </head>
 
