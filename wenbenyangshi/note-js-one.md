@@ -604,8 +604,115 @@ for （初始化变量;条件表达式;操作表达式） { 循环体 }
     }     
 ## 2-4 for 循环重复某些相同操作    
 for循环因为有了计数器的存在，我们还可以重复的执行某些操作，比如做一些算数运算。   
+ 
+    // 求1-100  之间的整数累加和
+     var num = 0  //求和的变量  
+     for (var i = 1; i<= 100; i++) {
+       num = num + i;
+     }  //num += i;
+     console.log(num);     
+## 2-5 for循环案例     
+ // 1.求1-100  之间所有数的平均值，需要一个sum和的变量，还需要一个平均值average变量
+    var sum = 0
+    var average = 0;
+    for (var i = 1; i <= 100; i++) {
+      sum = sum + i;
+    }
+    average = sum / 100;
+    console.log(average);
 
+    // 2.求1-100之间所有偶数和奇书的和
+    var even = 0;
+    var odd = 0;  
+    for (var i = 1; i <=100; i++) {
+        if ( i % 2 == 0) {
+          even = even + i;
+        } else {
+          odd = odd + i;
+        }
+    }
+    console.log('1~100之间所有偶数和是'+ even);
+    console.log('1~100之间所有奇数的和是'+ odd);
 
+    //3.求1-100之间所有能被3整除的数字的和
+    var result = 0;
+    for (var i = 1; i<=100; i++) {
+      if ( i % 3 ==0) {
+        result = result + i;
+      }
+    }
+    console.log('1-100之间能够被3整除的数字的和是：'+result); 
+       
+  ## 求学生成绩案例
+
+   var num = prompt('请输入班级总人数：');
+       
+var sum = 0;  //求和的变量
+  var average = 0; //求平均值的变量
+ 
+    for(var i = 1; i <= num; i++) {
+     var score = prompt('请您输入第'+ i +'个学生的成绩');
+     //从prompt取过来的数据是字符串型，需要转换为数字型
+     sum = sum + parseFloat(score);
+  }    
+
+ average = sum / num;
+ 
+ alert('班级的总成绩是' + sum);
+  
+  alert('班级平均分是：' + average);  
+# 3.双重for循环   
+## 3-1.双重for循环概述   
+很多情况下，单程for循环并不能满足我们的需求，比如我们要打印一个5行5列的图像，打印一个倒直角三角形等，此时就可以通过循环嵌套来实现。   
+循环嵌套是指在一个循环语句中在定义一个循环语句的语法结构，例如在for循环语句中，可以再嵌套一个for循环。这样的for循环语句我们称之为双重for循环。  
+外层循环循环一次，里面的循环全部执行    
+### 打印5行5列的字：  
+
+    var str = '';
+    for (var i = 1 ; i <= 5 ; i++) { //外层循环负责打印五行
+    for (var j = 1 ; j <= 5 ; j++) { //里层循环负责打印五个星星
+      str = str + '我';
+    }
+      str = str + '\n';
+    }
+    console.log(str);   
+### 打印N行N列的字：
+    var rows = prompt('请您输入行数：');
+    var cols = prompt('请您输入列数：');
+    var str = '';
+    for (var i = 1; i <= rows; i++) {
+      for (var j = 1; j <= cols; j++) {
+        str = str + '我'
+      }
+      str = str + '\n'
+    }
+    console.log(str);  
+### 倒三角：  
+     var str = ''
+     for( var i = 1; i<=10; i++) {
+      for( var j = i; j <= 10; j++) {
+        str = str + '我';
+      }
+      str = str + '\n';
+    }
+    console.log(str);    
+### 正三角九九乘法表：  
+    var str = ''
+    for( var i = 1; i<=9; i++) {
+      for( var j = 1; j <= i; j++) {
+        str = str+j+'×'+i+'＝'+i*j+'\t'
+      }
+      str = str + '\n';
+    }
+    console.log(str);  
+## 3-5 for循环小结  
+- for循环可以重复执行某些相同代码  
+- for循环可以重复执行些许不同代码，因为我们有计数器  
+- for循环可以重复执行某些操作，比如算术运算符加法操作  
+- 随着需求增加，双重for循环可以做更多，更好看的效果  
+- 双重for循环，外层循环一次，内层for循环全部执行  
+- for循环是循环条件和数字直接相关的循环  
+- 分析比写代码更重要
 
 
 
