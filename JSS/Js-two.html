@@ -6,20 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>获取变量数据类型</title>
     <script>
-       var mun = 10;
-       console.log(typeof mun);//number
-       var str = 'tank'
-       console.log(typeof str);//string
-       var flag = true;
-       console.log(typeof flag);//boolean
-       var vari = undefined;
-       console.log(typeof vari);//undefined
-       var timer = null;
-       console.log(typeof timer);//object
-         // prompt 娶过来的值是  字符型的
-       var age = prompt('请输入您的年龄')
-       console.log(age);
-       console.log(typeof age);
+       var arr = ['red','green','blue','pink','purple'];
+     var newArr = [];
+     for (i = arr.length-1; i>=0; i--) {
+     newArr[newArr.length] = arr[i]
+     }
+     console.log(newArr);
        
 
        
