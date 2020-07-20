@@ -294,4 +294,50 @@ arguments展示形式是一个伪数组，因此可以进行遍历。伪数组�
             }
             return flag;
         }
-        console.log(isRunYear(1999));
+        console.log(isRunYear(1999));  
+## 函数可以调用另外一个函数：  
+因为每个函数都是独立的代码块，用于完成特殊任务，因此经常会用到函数相互调用的情况。   
+ 
+     function fn1() {
+           console.log(111);
+           fn2();
+           console.log('fn1');
+       }
+       function fn2() {
+           console.log(222);
+           console.log('fn2')
+       }
+       fn1()  
+## 输出年份的2月份天数：    
+
+      function backDay() {
+            var year = prompt('请您输入年份')
+            if (isRunYear(year)) {
+                alert('当前年份是闰年2月份有29天');
+            } else {
+                alert('当前年份是平年2月份有28天');
+            }
+        }
+        backDay();
+        function isRunYear(year) {
+            var flag = false;
+            if (year % 4 == 0 && year % 100 != 0 || year % 400) {
+                flag = true;
+            }
+            return flag;
+        }  
+# 7.函数的两种声明方式   
+ 
+    1.利用函数关键字自定义函数（命名函数）  
+       function fn() {};
+       fn();
+       2.函数表达式（匿名函数）  
+       //var fun = function（）{}；
+       var fun = function(aru) {
+           console.log('我是函数表达式');
+           console.log(aru);
+       }
+       fun('唐建豪');  
+       1.fun是变量名，不是函数名
+       2.函数表达式声明方式跟声明变量差不多，只不过变量里存的是值，函数表达式里面存的是函数
+       3.函数表达式也可以进行传递参数
