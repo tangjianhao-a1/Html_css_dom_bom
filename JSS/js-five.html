@@ -6,21 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-      var keke = {
-          uname:'可可',
-          type:'阿拉斯加',
-          age:5 + '岁',
-          colour:'棕红色',
-          sayHi: function() {
-              console.log('汪汪汪');
-              console.log('演电影');
-          }
-      }
-      console.log(keke.uname);
-      console.log(keke.type);
-      console.log(keke.age);
-      console.log(keke.colour);
-      keke.sayHi();
+    function backDay() {
+        var year = prompt('请输入年份')
+        if(isRunYear(year)) {
+            alert('当前年份是闰年2月份有29天')
+        } else {
+            alert('当前年份是平年2月份有28天')
+        }
+    }
+    backDay();
+    function isRunYear(year) {
+            var flag = false;
+        if (year % 4 == 0 && year % 100 != 0 || year % 400) {
+           flag = true;
+        } 
+        return flag;
+    }
     </script> 
 </head>
 
