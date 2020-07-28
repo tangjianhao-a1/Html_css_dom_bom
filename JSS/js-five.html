@@ -6,22 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-    function backDay() {
-        var year = prompt('请输入年份')
-        if(isRunYear(year)) {
-            alert('当前年份是闰年2月份有29天')
-        } else {
-            alert('当前年份是平年2月份有28天')
+    function sum(arr) {
+        for(var i = 0; i < arr.length - 1; i++) {
+            for(var j = 0; j < arr.length - i - 1; j++) {
+                if(arr[j] > arr[j + 1]) {
+                    var team = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = team;
+                }
+            }
         }
+        return arr;
+        
     }
-    backDay();
-    function isRunYear(year) {
-            var flag = false;
-        if (year % 4 == 0 && year % 100 != 0 || year % 400) {
-           flag = true;
-        } 
-        return flag;
-    }
+    var re = sum([4,7,2,9,6,3,1,8,5]);
+    console.log(re);
     </script> 
 </head>
 
