@@ -6,21 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-    function sum(arr) {
-        for(var i = 0; i < arr.length - 1; i++) {
-            for(var j = 0; j < arr.length - i - 1; j++) {
-                if(arr[j] > arr[j + 1]) {
-                    var team = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = team;
-                }
-            }
-        }
-        return arr;
-        
-    }
-    var re = sum([4,7,2,9,6,3,1,8,5]);
-    console.log(re);
+   function num(arr) {
+       for(var i = 0; i < arr.length - 1; i++) {
+           for(var j = 0; j < arr.length - i - 1; j++) {
+               if(arr[j] > arr[j + 1]) {
+                   var bbt = arr[j];
+                   arr[j] = arr[j + 1];
+                   arr[ j + 1] = bbt;
+               }
+           }
+       }
+       return arr;
+   }
+   var re = num([4,7,2,9,6,3,1,8,5]);
+   console.log(re);
     </script> 
 </head>
 
