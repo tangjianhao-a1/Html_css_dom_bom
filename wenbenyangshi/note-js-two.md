@@ -524,7 +524,16 @@ MDN: https://developer.mozilla.org/zh-CN/
       console.log(Math.max(1,9,'唐建豪')); // NaN
       console.log(Math.max());  // -Infinity   
 ## 3-1.Math概述  
-Math对象不是构造函数，它是具有数学常数和函数的属性和方法，跟数学相关的运算（求绝对值，取整，最大值等）可以使用Math中的成员。
+Math对象不是构造函数，它是具有数学常数和函数的属性和方法，跟数学相关的运算（求绝对值，取整，最大值等）可以使用Math中的成员。  
+
+
+
+     Math.PI   //圆周率 
+     Math.floor()  //向下取整  
+     Math.ceil()  //向上取整
+     Math.round()  //四舍五入 就近取整  注意 -3.5  结果是  -3  
+     Math.abs()  //绝对值
+     Math.max()/Math.min()  //求最大和最小值
 
 
 
