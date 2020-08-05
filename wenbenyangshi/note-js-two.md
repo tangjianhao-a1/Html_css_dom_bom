@@ -450,7 +450,7 @@ person.height = 154;
     obj.sayHi();    
 ## 2-3 利用构造函数创建对象   
 构造函数：是一种特殊的函数，主要用来初始化对象，即为对象成员变量赋初始值，它总与new运算符一起使用。我们可以把对象中一些公共的属性和方式抽取出来，然后封装到这个函数里面。   
-  
+
     //利用构造函数创建对象  
     //我们需要创建四大天王的对象   相同的属性： 名字 年龄 性别 相同的方法： 唱歌  
     //构造函数的语法格式  
@@ -533,8 +533,84 @@ Math对象不是构造函数，它是具有数学常数和函数的属性和方�
      Math.ceil()  //向上取整
      Math.round()  //四舍五入 就近取整  注意 -3.5  结果是  -3  
      Math.abs()  //绝对值
-     Math.max()/Math.min()  //求最大和最小值
+     Math.max()/Math.min()  //求最大和最小值  
 
+
+      
+          // 我们想要得到两个数之间的随机整数  并且 包含这两个整数
+          /* function getArr(min,max) {
+             return Math.floor(Math.random() * (max - min + 1)) + min;
+           }
+           console.log(getArr(1,10));
+           var arr = ['唐建豪', '李晓琴', '张三' , '李四'];
+           console.log(arr[getArr(0,arr.length - 1)]); */  
+
+猜数字游戏：  
+        
+         function getArr(min,max) {
+         return Math.floor(Math.random() * (max - min + 1)) + min;
+       }
+        var random = getArr(1,50);
+      for( var i = 1; i <= 10; i++) {
+      var num = prompt('你来猜？输入 1 - 50之间的一个数字,机会只有十次');
+      if (num > random) {
+          alert('你猜大了');
+      } else if ( num < random) {
+          alert('你猜小了');
+      } else {
+          alert('你好帅啊，猜对了');
+          break;
+      }
+  }   
+# 4.日期对象   
+## 4-1 Date概述  
+- Date对象和Math对象不一样，他是一个构造函数，所以我们需要实例化后才能使用  
+- Date实例用来处理日期和时间
+  
+        // Date()日期对象  是一个构造函数，必须使用new  来调用创建我们的日期对象
+           var arr = new Array(); //创建一个数组对象
+           var obj = new Object();  //创建了一个对象实例 
+         //1.使用Date 如果没有参数  返回当前系统的当前时间   
+          var date = new Date();
+         //2.参数常用写法  数字型  2019，10，01  或者是 字符串型  '2019-10-1  8:8:8'
+         var date1 = new Date(2019,10,1);
+         console.log(date1);  //返回的是 11月 不是10月  
+         var date2 = new Date('2019-10-1  8:8:8')
+         console.log(date2);
+## 4-2.Date()方法的使用    
+1.获取当前时间必须实例化   
+var now = new Date();
+conction.log(now)   
+2.Date()构造函数的参数  
+如果括号里面有时间，就返回参数里面的时间。例如日期格式字符串为'2019-5-1',可以写成newDate('2019-5-1')或者new Date('2019/5/1')   
+## 4-3.日期格式化   
+我们想要2019-8-8 8：8：8格式的日期，要怎么办？   
+需要获取日期指定部分，所以我们要手动得到这种格式。     
+方法名|说明|代码
+-|-|-
+getFullYear()|获取当年|dObj.getFullYear()
+getMonth()|获取当月(0 - 11)|dObj.getMonth()
+grtDate()|获取当天日期|dObj.get(Date)
+getDay()|获取星期几(周日0到周六)|dObj.getDay()    
+getHous()|获取当前小时|dObj.getHous()   
+getMinutes()|获取当前分钟|dObj.getMinutes()    
+getSeconds()|获取当前秒钟|dObj.getSeconds()   
+    var date = new Date();
+    console.log(date.getHours());  //时
+    console.log(date.getMinutes()); //分
+    console.log(date.getSeconds()); //秒
+    //封装一个函数返回当前的时分秒 格式 08：08：08  
+    function getTime() {
+        var time = new Date();
+        var h = time.getHours();
+        h = h < 10 ? '0' + h : h;
+        var m = time.getMinutes();
+        m = m < 10 ? '0' + m : m;
+        var s = time.getSeconds();
+        s = s < 10 ? '0' + s : s;
+        return h + ':' + m + ':' + s;
+    }
+    console.log(getTime());
 
 
 
