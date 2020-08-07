@@ -610,7 +610,9 @@ getSeconds()|获取当前秒钟|dObj.getSeconds()
         s = s < 10 ? '0' + s : s;
         return h + ':' + m + ':' + s;
     }
-    console.log(getTime());
+    console.log(getTime());   
+## 4-4.获取日期的总的毫秒形式   
+Date对象基于1970年1月1日（世界标准时间）起的毫秒数
 
 
 
