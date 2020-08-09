@@ -6,22 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-    var date = new Date();
-    console.log(date.getHours());  //时
-    console.log(date.getMinutes()); //分
-    console.log(date.getSeconds()); //秒
-    //封装一个函数返回当前的时分秒 格式 08：08：08  
-    function getTime() {
-        var time = new Date();
-        var h = time.getHours();
-        h = h < 10 ? '0' + h : h;
-        var m = time.getMinutes();
-        m = m < 10 ? '0' + m : m;
-        var s = time.getSeconds();
-        s = s < 10 ? '0' + s : s;
-        return h + ':' + m + ':' + s;
-    }
-    console.log(getTime());
+        
+  function unique(arr) {
+      var newArr = [];
+      for(var i = 0; i < arr.length; i++) {
+          if(newArr.indexOf(arr[i]) === -1) {
+              newArr.push(arr[i]);
+          }
+      }
+      return newArr;
+  }
+  var demo = unique(['c','a','z','a','x','a','x','x','b']);
+  console.log(demo);
     </script> 
 </head>
 

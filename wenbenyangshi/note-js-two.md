@@ -612,7 +612,118 @@ getSeconds()|获取当前秒钟|dObj.getSeconds()
     }
     console.log(getTime());   
 ## 4-4.获取日期的总的毫秒形式   
-Date对象基于1970年1月1日（世界标准时间）起的毫秒数
+Date对象基于1970年1月1日（世界标准时间）起的毫秒数    
+为什么计算机起始时间从1970年开始？   
+我们经常利用总的毫秒数来计算时间，因为它更精准   
+ 
+    //获得Date总的毫秒数，不是当前时间的毫秒数，而是距离1970年1月1号过了多少毫秒数    
+    //1.通过valueOf()  getTime()    
+    var date = new Date();
+    console.log(date.valueOf());//就是  我们现在时间 距离1970.1.1 总的毫秒数  
+    console.log(date.getTime());  
+    //2.简单的写法 (最常用的写法)    
+    var date1 = +new Date(); // +new Date() 返回的就是总的毫秒数   
+    console.log(date1);   
+    //3.H5 新增的 获得总的毫秒数   
+    console.log(Date.now());   
+## 倒计时案例分析   
+1.核心算法：输入的时间减去现在的时间就是剩余的时间，即倒计时，但是不能纳时分秒相减，比如05分减去25分，结果会是负数。  
+2.用时间戳来做，用户输入时间时间总的毫秒数减去现在时间的总的毫秒数，得到的就是剩余时间的毫秒数  
+3.把剩余时间总的毫秒数转换为天，时，分，秒(时间戳转换为时分秒)   
+转换公式如下    
+
+- d = parselnt(总秒数/60/60/24);//计算天数  
+- h = parselnt(总秒数/60/60%24)；//计算小时  
+- m = parselnt(总秒数/60%60)；//计算分数  
+- s = parselnt(总秒数%60)；//计算当前秒数   
+
+           
+           function conutDown(time) {
+           var nowTime = +new Date();//返回的是当前时间总的毫秒数  
+           var inputTime = +new Date(time);//返回的是用户输入时间总的毫秒数
+           var times = (inputTime - nowTime)/1000;//time是剩余时间总的毫秒数
+           var d = parseInt(times/60/60/24);//天
+           d = d < 10 ? '0' + d : d;
+           var h = parseInt(times/60/60%24);//时
+           h = h < 10 ? '0' + h : h
+           var m = parseInt(times/60%60);//分
+           m = m < 10 ? '0' + m : m;
+           var s = parseInt(times%60);//当前的秒 
+           s = s < 10 ? '0' + s : s;
+           return d + '天' + h + '时' + m + '分' + s + '秒';
+           }
+           console.log(conutDown('2020-8-10 08:30:00'));
+           var date = new Date();
+           console.log(date);  
+# 5.数组对象   
+## 5-1.数组对象的创建   
+创建数组对象的两种方式   
+- 字面量方式  
+- new Array()   
+## 5-2.检测是否为数组方法    
+ 
+     //检测是否为数组  
+     //(1)instanceof  运算符，它可以用来检测是否为数组   
+      var arr = [];
+     console.log(arr instanceof Array);
+     //(2)Array.isArray(参数);   
+     console.log(Array.isArray(arr));    
+## 5-3 添加删除数组元素的方法   
+方法名|说明|返回值   
+-|-|-  
+push(参数1...)|末尾添加一个或多个元素，注意修改原数组|并返回新的长度   
+pop()|删除数组最后一个元素，把数组长度减1 无参数，修改原数|返回它删除的元素的值  
+unshift(参数1...)|向数组的开头添加一个或更多元素，注意修改原数组|并返回新的长度   
+shift()|删除数组的第一个元素，数组长度减1无参数，修改原数组|并返回第一个元素的值   
+筛选数组案例：
+
+    var arr = [1500,1200,2000,2100,1800];
+    var newArr = [];
+    for(i = 0; i < arr.length; i++) {
+       if(arr[i] < 2000) {
+           newArr.push(arr[i]);
+       }
+    }
+     console.log(newArr);  
+## 5-4.数组排序     
+方法名|说明|是否修改原数组  
+-|-|-  
+reverse()|颠倒数组中元素的顺序，无参数|该方法会改变原来的数组 返回新数组  
+sort()|对数组的元素进行排序|该方法会改变原来的数组   返回新数组  
+    var arr = [1500,1200,2000,2100,1800];
+    var newArr = [];
+    for(i = 0; i < arr.length; i++) {
+       if(arr[i] < 2000) {
+           newArr.push(arr[i]);
+       }
+    }
+    console.log(newArr);  
+## 5-5.数组索引方法   
+方法名|说明|返回值
+-|-|-  
+indexOf()|数组中查找给定元素的第一个索引|如果存在返回索引号，如果不存在，则返回-1.  
+lastlndexOf()|在数组中的最后一个的索引，|如果存在返回索引号，如果不存在，则返回-1.  
+## 数组去重案例  
+ 
+ 
+ 
+     function unique(arr) {
+      var newArr = [];
+      for(var i = 0; i < arr.length; i++) {
+          if(newArr.indexOf(arr[i]) === -1) {
+              newArr.push(arr[i]);
+          }
+      }
+      return newArr;
+  }
+  var demo = unique(['c','a','z','a','x','a','x','x','b']);
+  console.log(demo);
+## 5-6.数组转换为字符串   
+方法名|说明|返回值   
+-|-|-
+toString()|把数组转换成字符串，逗号分隔每一项|返回一个字符串   
+join('分隔符')|方法用于把数组中的所有元素转换为一个字符串。|返回一个字符串
+
 
 
 
