@@ -702,7 +702,11 @@ sort()|对数组的元素进行排序|该方法会改变原来的数组   返回
 方法名|说明|返回值
 -|-|-  
 indexOf()|数组中查找给定元素的第一个索引|如果存在返回索引号，如果不存在，则返回-1.  
-lastlndexOf()|在数组中的最后一个的索引，|如果存在返回索引号，如果不存在，则返回-1.  
+lastlndexOf()|在数组中的最后一个的索引，|如果存在返回索引号，如果不存在，则返回-1.     
+      
+      var str = '改革春风吹满地.春天来了';    
+      console.log(str.indexOf('春'));    
+      console.log(str.indexOf('春',3));//从索引号是3的位置开始往后查找
 ## 数组去重案例  
  
  
@@ -736,8 +740,54 @@ var temp = new String('andy');
 //2.赋值给我们声明的字符变量   
 str = temp;    
 3.销毁这个临时变量    
-temp = null;
-
+temp = null;    
+## 6-2.字符串的不可变    
+指的是里面的值不可变，虽然看上去可以改变内容，但其实是地址变了，内存中新开辟了一个内存空间。   
+var str = 'abc;     
+str = 'hello';    
+//当重新给str赋值的时候，常量'abc'不会被修改，依然在内存中    
+//由于字符串的不可变，在大量拼接字符串的时候会有效率问题     
+var str = ' ';     
+for (var i = 0; i < 10000; i++)  {       
+    str += i;    
+    }        
+console.log(str);// 这个结果需要花费大量时间来显示，因为需要不断开辟新的空间       
+## 6-3.根据字符返回位置     
+字符串所有的方法，都不会修改字符串本身（字符串是不可变的），操作完成会返回一个新的字符串。
+## 6-4.根据位置返回字符（重点）  
+方法名|说明|使用    
+-|-|-
+charAt(index)|返回指定位置的字符（index 字符串的索引号）|str.charAt(0)     
+charCodeAt(index)|获取指定位置处字符的ASCII码(index索引号)|str.charCodeAt(0)    
+str[index]|获取指定位置处字符|HTML5,IE8+支持和charAt()等效   
+## 统计出现次数最多的字符   
+     var str = 'adcoefoxyozzopp';    
+     var o = {};
+     for(var i = 0; i < str.length;i++) {
+       var chars = str.charAt(i)
+       if(o[chars]) {
+        o[chars]++
+       } else {
+           o[chars] = 1;
+       }
+    }
+     console.log(o);  
+    var max = 0;
+    for (var k in o) {
+       if(o[k] > max) {
+           max = o[k];
+       }
+    }
+    console.log(max);   
+## 查找字符串中某个字符出现的次数   
+     var str = 'adcoefoxyozzopp';  
+     var index = str.indexOf('o');  
+     var num = 0;  
+     while(index !== -1) {
+       console.log(index);
+       num++;
+       index = str.indexOf('o',index + 1);
+    }
 
 
 
