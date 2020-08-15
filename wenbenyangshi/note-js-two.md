@@ -719,9 +719,9 @@ lastlndexOf()|在数组中的最后一个的索引，|如果存在返回索引�
           }
       }
       return newArr;
-  }
-  var demo = unique(['c','a','z','a','x','a','x','x','b']);
-  console.log(demo);
+    }
+    var demo = unique(['c','a','z','a','x','a','x','x','b']);
+    console.log(demo);
 ## 5-6.数组转换为字符串   
 方法名|说明|返回值   
 -|-|-
