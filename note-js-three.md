@@ -59,6 +59,21 @@ DOM在我们实际开发中主要用来操作元素。
 - 特殊元素获取   
 ## 2-2.根据ID获取   
 使用getElementByld()方法可以获取带有ID的元素对象。  
+
+     <body>
+     <div id="class">2020-8-18</div>
+     <script>
+     //1.因为文档页面从上往下加载，所以先得有标签，所以我们script写到标签下面
+     //2.get 获得 element 元素 by 通过 驼峰命名法
+     //3.参数 id是大小写敏感的字符串  
+     //4.返回的是一个对象
+     var timr = document.getElementById('class');
+     console.log(timr)
+     console.log(typeof timr);
+     //5.console.dir 打印我们返回元素对象  更好的查看里面的属性和方法
+     console.dir(timr);
+     </script>
+     </body>  
 ## 2-3.根据标签名获取    
 使用getElementsByTagName()方法可以返回带有指定标签名的对象的集合。   
 document.getElementsByTaName('标签名');    
