@@ -136,7 +136,33 @@ onfocus|获得鼠标焦点触发
 onblur|失去鼠标焦点触发  
 onmousemove|鼠标移动触发   
 onmouseup|鼠标弹起触发  
-onmousedown|鼠标按下触发
+onmousedown|鼠标按下触发       
+# 4.操作元素    
+JavaScript的DOM操作可以改变网页内容，结构和样式，我们可以利用DOM操作元素来改变元素里面的内容，属性等，注意以下都是属性   
+## 4-1.改变元素内容     
+element.innerText   
+从起始位置带终止位置的内容，但它去除html标签，同时空格和换行也会去掉   
+element.innerHTML   
+起始位置到终止位置的全部内容，包括html标签，同时保留空格和换行   
+ 
+ 
+    var btn = document.querySelector('button');
+    var div = document.querySelector('div');
+    btn.onclick = function () {
+      div.innerText = getDate();
+    }
+
+    function getDate() {
+         var date = new Date() 
+         var year = date.getFullYear();
+         var month = date.getMonth() + 1;
+         var dates = date.getDate();
+         var arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+         var day = date.getDay();
+         return '今天是：' + year + '年' + month + '月' + dates + '日' + arr[day];
+    }
+    var p = document.querySelector('p');
+    p.innerText = getDate();
 
 
 
