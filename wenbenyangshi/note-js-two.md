@@ -835,7 +835,7 @@ string,number,boolean,undefined,null
 ## 5.复杂类型传参   
 函数的形参也可以看做是一个变量，当我们把引用类型变量传给形参时，其实是把变量在栈空间里保存的堆地址复制给了形参，形参和实参其实保存的是同一个推地址，所以操作的是同一个对象。  
      
-     function person(name) {
+     function person(name) {y
      this.name = name;
      }
      function fl(x) {// x = p
