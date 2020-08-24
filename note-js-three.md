@@ -163,6 +163,20 @@ element.innerHTML
     }
     var p = document.querySelector('p');
     p.innerText = getDate();
+## 4-2.常用元素的属性操作   
+1.innerText.innerHTML.改变元素内容   
+2.src，href  
+3.id，alt，title    
+## 4-3.表达元素的属性操作  
+利用DOM可以操作如下表单元素的属性：   
+type,value,checked,selected,disabled    
+## 4-4.样式属性操作   
+我们可以通过JS修改元素的大小，颜色，位置等样式。   
+1.element.style 行内样式操作  
+2.element.className 类名样式操作   
+注意：  
+1.JS里面的样式采取驼峰命名法    
+2.JS修改style样式操作，产生的是行内样式，css权重比较高
 
 
 
