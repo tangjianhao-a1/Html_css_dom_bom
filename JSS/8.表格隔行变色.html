@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 200px auto;
+            width: 600px;
+            height: 90px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #d7d7d7;
+            text-align: center;
+            font-size: 15px;
+            color: blue;
+        }
+        .bg {
+            background: pink;
+        }
+        .TJH tr th {
+            background: bisque;
+            color:black;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead class="TJH">
+            <tr>
+                <th>代码</th>
+                <th>名称</th>
+                <th>最新公布净值</th>
+                <th>累计净值</th>
+                <th>前单位净值</th>
+                <th>净值增长率</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>003526</td>
+                <td>1个月定期开放债卷</td>
+                <td>1.1131</td>
+                <td>1.2626</td>
+                <td>1.2662</td>
+                <td>1.2626</td>
+            </tr>
+            <tr>
+                <td>003778</td>
+                <td>6个月定期开放债卷</td>
+                <td>1.0235</td>
+                <td>1.3654</td>
+                <td>1.6987</td>
+                <td>1.6587</td>
+            </tr>
+            <tr>
+                <td>003589</td>
+                <td>5个月定期开放债卷</td>
+                <td>1.0235</td>
+                <td>1.3654</td>
+                <td>1.6987</td>
+                <td>1.6587</td>
+            </tr>
+            <tr>
+                <td>003658</td>
+                <td>6个月定期开放债卷</td>
+                <td>1.0232</td>
+                <td>3.2589</td>
+                <td>2.3657</td>
+                <td>1.6587</td>
+            </tr>
+            <tr>
+                <td>007414</td>
+                <td>8个月定期开放债卷</td>
+                <td>5.0259</td>
+                <td>1.1489</td>
+                <td>1.6987</td>
+                <td>5.6587</td>
+            </tr>
+        </tbody>
+        <script>
+            var trs = document.querySelector('tbody').querySelectorAll('tr');
+            for(var i = 0; i < trs.length; i++) {
+                trs[i].onmouseover = function() {
+                   this.className = 'bg';
+                }
+                trs[i].onmouseout = function() {
+                    this.className = '';
+                }
+            }
+        </script>
+</body>
+</body>
+
+</html>
