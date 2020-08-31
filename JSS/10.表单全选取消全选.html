@@ -84,7 +84,22 @@
                 j_tbs[i].checked = this.checked;
             }
         }
-   
+        for(var i = 0; i < j_tbs.length; i++) {
+            j_tbs[i].onclick = function() {
+                //flag 控制全选按钮是否选中
+                var flag = true;
+                 //每次点击下面的复选框都要循环检测这4个小按钮是否全被选中
+                 for(var i = 0; i < j_tbs.length;
+                  i++) {
+                     if(!j_tbs[i].checked) {
+                         flag = false; 
+                         break;
+                     }
+                 }
+                 j_cbAll.checked = flag;
+            }
+           
+        }
     </script>
 </body>
 
