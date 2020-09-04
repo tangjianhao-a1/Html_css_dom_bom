@@ -188,7 +188,9 @@ type,value,checked,selected,disabled
 - element.getAttribute('属性')；  
 区别：   
 - element.属性  获取内置属性值(元素本身自带的属性)    
-- element.getAttribute('属性');主要获得自定义的属性（标准）程序员自定义的属性。
+- element.getAttribute('属性');主要获得自定义的属性（标准）程序员自定义的属性。    
+2.移除属性   
+- element.removeAttribute('属性');
 
 
 
