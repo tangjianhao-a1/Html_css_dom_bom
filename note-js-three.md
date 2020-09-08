@@ -190,7 +190,20 @@ type,value,checked,selected,disabled
 - element.属性  获取内置属性值(元素本身自带的属性)    
 - element.getAttribute('属性');主要获得自定义的属性（标准）程序员自定义的属性。    
 2.移除属性   
-- element.removeAttribute('属性');
+- element.removeAttribute('属性');   
+## 4-7.H5自定义属性   
+自定义属性目的：是为了保存并使用数据。有些数据可以保存到数据库中。   
+自定义属性获取是通过getAttribute('属性')获取。   
+但是有些自定义属性很容易引起歧义，不容易判断是元素的内置属性还是自定义属性。  
+H5给我们新增了自定义属性：   
+### 1.设置H5自定义属性   
+H5规定自定义属性data-开头作为属性名并且赋值。    
+比如《div data-index = "1">《/div>   
+或者使用JS设置    
+element.setAttribute('data-index',2)    
+### 2.获取H5自定义属性    
+1.兼容性获取element.getAttribute('data-index');    
+2.H5新增element.dataset.index或者element.dataset['index']ie11才开始支持
 
 
 
