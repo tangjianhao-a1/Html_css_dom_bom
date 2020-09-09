@@ -203,7 +203,30 @@ H5规定自定义属性data-开头作为属性名并且赋值。
 element.setAttribute('data-index',2)    
 ### 2.获取H5自定义属性    
 1.兼容性获取element.getAttribute('data-index');    
-2.H5新增element.dataset.index或者element.dataset['index']ie11才开始支持
+2.H5新增element.dataset.index或者element.dataset['index']ie11才开始支持    
+# 5.节点操作   
+## 5-1.为什么学节点操作  
+获取元素通常使用两种方式：   
+1.利用DOM提供的方式获取元素   
+- document.getElementById()  
+- document.getElementsByTagName()  
+- document.querySelector等  
+-逻辑性不强，繁琐   
+
+2.利用节点层级关系获取元素   
+- 利用父子兄节点关系获取元素  
+- 逻辑性强，但是兼容性稍差      
+这两种方式都可以获取元素节点，我们后面都会使用，但是节点操作会更简单   zhong
+## 5-2节点概述  
+网页中的所有内容都是节点（标签，属性，文本，注释等），再DOM中，节点使用node来表示。  
+HTML DOM树中的所有节点均可通过JavaScript进行访问，所有HTML元素（节点）均可被修改，也可以创建或删除。    
+一般地，节点至少拥有nodeType（节点类型），nodeName（节点名称）和nodeValue（节点值）这三个基本属性。  
+- 元素节点 nodeType为 1  
+- 属性节点 nodeType为 2  
+- 文本节点 nodeType为3（文本节点包含文字，空格，换行等）   
+我们再实际开发中，节点操作的元素节点。
+
+
 
 
 
