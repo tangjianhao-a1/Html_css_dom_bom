@@ -234,10 +234,22 @@ node.parrenNode
 parentNode.childNodes返回包含指定节点的子节点的集合，该集合为即时更新的集合。   
 注意：返回值里面包含了所有的子节点，包括元素节点，文本节点等。    
 如果只想要获得里面的元素节点，则需要专门处理。所以我们一般不提倡使用childNodes      
-## 2.子节点   
+   
 2.parentNode.children[非标准]  
 parentNode.children是一个只读属性，返回所有的元素节点。它只返回子元素节点，其余节点不返回   
-虽然children是一个非标准，但是得到了各个浏览器的支持，因此我们可以放心使用
+虽然children是一个非标准，但是得到了各个浏览器的支持，因此我们可以放心使用     
+3.parentNote.firstChild  
+firstCild返回第一个子节点，找不到则返回null，同样，也是包含所有节点。  
+4.parentNote.lastChild   
+5.parentNode.firstElementChild   
+parentNode.firstElementChild返回第一个子元素节点，找不到则返回null   
+6.parentNode.lastElementChild   
+parentNode.lastElementChild返回最后一个子元素节点，找不到则返回null   
+注意：这两个方法有兼容性问题，IE9以上才支持。  
+实际开发中firstChild和lastchild包含其他节点，操作不方便，5和6又有兼容性问题，那么怎么获取第一个字元素节点或最后一个？    
+解决方案：   
+1.如果想要使用第一个子元素节点，可以使用parentNode.child[0]
+
 
 
 
