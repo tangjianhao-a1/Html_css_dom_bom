@@ -248,7 +248,26 @@ parentNode.lastElementChild返回最后一个子元素节点，找不到则返�
 注意：这两个方法有兼容性问题，IE9以上才支持。  
 实际开发中firstChild和lastchild包含其他节点，操作不方便，5和6又有兼容性问题，那么怎么获取第一个字元素节点或最后一个？    
 解决方案：   
-1.如果想要使用第一个子元素节点，可以使用parentNode.child[0]
+1.如果想要使用第一个子元素节点，可以使用parentNode.child[0]   
+###3. 兄弟节点    
+1.node.nextSibling   
+nextsibling返回当前元素的下一兄弟节点，找不到则返回null。同样，也是包含所有节点。   
+2.node.perviousSibling   
+previousSibling返回当前元素上一个兄弟节点。找不到则返回null，同样，也是包含所有的节点。   
+3.node.nextElementSibling   
+nextElementSibling返回当前元素下一个兄弟节点，找不到则返回null   
+4.node.previousElementSibling     
+注意： 3.4这两种方法有兼容性问题，IE9以上才支持。   
+## 5-4.创建节点   
+document.createElement('tagName')   
+document.createElement()方法创建由tagName指定的HTML元素。因为这些元素原先不存在，是根据我们的需求动态生成的，所以我们也称为动态创建元素节点。  
+## 添加节点   
+1.node.appendchild(child)    
+node.appendChild()方法将一个节点添加到指定父节点的子节点列表末尾。类似CSS里面的after伪元素。    
+2.node.insertBefore(child,指定元素)，   
+node.insertBefore()方法将一个节点添加到父节点的指定子节点前面，类似于CSS里面的before伪元素。
+
+
 
 
 

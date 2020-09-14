@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea {
+            border: 1px solid pink;
+            outline: none;
+            cursor: text;
+        }
+
+        button {
+            border: 1px solid pink;
+            width: 40px;
+            height: 20px;
+            outline: none;
+            cursor: pointer;
+            font-size: 3px;
+
+        }
+        li {
+            background-color: pink;
+            height: 20px;
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id="" cols="50" rows="10">123</textarea>
+    <button>发表</button>
+    <ul>
+        
+    </ul>
+    <script>
+        //1.获取元素
+        var btn = document.querySelector('button');
+        var text = document.querySelector('textarea');
+        var ul = document.querySelector('ul');
+        //2.注册事件   
+        btn.onclick = function () {
+            if (text.value == '') {
+                alert('您没有输入内容')
+                return false;
+            } else {
+                //1.获取元素
+                var li = document.createElement('li');
+                //先有li  才能赋值  
+                li.innerHTML = text.value;
+                //2.添加元素
+                ul.appendChild(li);
+            }
+        }
+    </script>
+</body>
+
+</html>
