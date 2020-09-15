@@ -266,6 +266,10 @@ document.createElement()方法创建由tagName指定的HTML元素。因为这些
 node.appendChild()方法将一个节点添加到指定父节点的子节点列表末尾。类似CSS里面的after伪元素。    
 2.node.insertBefore(child,指定元素)，   
 node.insertBefore()方法将一个节点添加到父节点的指定子节点前面，类似于CSS里面的before伪元素。
+## 5-5.删除节点   
+node.removeChild(child)   
+node.removeChild() 方法从Dom中删除一个子节点，返回删除的节点。
+
 
 
 
