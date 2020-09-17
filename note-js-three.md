@@ -268,7 +268,13 @@ node.appendChild()方法将一个节点添加到指定父节点的子节点列�
 node.insertBefore()方法将一个节点添加到父节点的指定子节点前面，类似于CSS里面的before伪元素。
 ## 5-5.删除节点   
 node.removeChild(child)   
-node.removeChild() 方法从Dom中删除一个子节点，返回删除的节点。
+node.removeChild() 方法从Dom中删除一个子节点，返回删除的节点。  
+## 5-6.复制节点（克隆节点）  
+node.cloneNode()    
+node.cloneNode()方法返回调用该方法的节点的一个副本。也称为克隆节点/拷贝节点  
+注意：  
+1.如果括号参数为空或者为false，则是浅拷贝，即只克隆复制节点本身，不克隆里面的子节点。
+
 
 
 
