@@ -273,7 +273,18 @@ node.removeChild() 方法从Dom中删除一个子节点，返回删除的节点�
 node.cloneNode()    
 node.cloneNode()方法返回调用该方法的节点的一个副本。也称为克隆节点/拷贝节点  
 注意：  
-1.如果括号参数为空或者为false，则是浅拷贝，即只克隆复制节点本身，不克隆里面的子节点。
+1.如果括号参数为空或者为false，则是浅拷贝，即只克隆复制节点本身，不克隆里面的子节点。  
+## 5-8.三种动态创建元素区别   
+- document.write();   
+- element.innerHTML  
+- document.createElement()   
+区别：   
+1.document.write是直接将内容写入页面的内容流，但是文档流执行完毕，则它会导致页面全部重绘   
+2.innerHTML是将内容写入某个某个DOM节点，不会导致页面全部重绘   
+3.innerHTML创建多个元素效率更高（不要拼接字符串，采取数组形式拼接），结构稍微复杂    
+4.createElement()创建多个元素效率稍微低了以点点，但是结构更清晰   
+总结：不同浏览器下。innerHTML效率要比creatElent高  
+
 
 
 
