@@ -339,12 +339,72 @@ eventTarget.addEventListener()方法将指定的监听器注册到evenTarget(目
 该方法接收三个参数：  
 - type:事件类型字符串，比如click,mouseover,注意这里不要带on  
 - listener:事件处理函数，事件发生时，会调用该监听函数   
-- useCapture:可选参数，时一个布尔值，默认是false。学完DOM事件流后，我们再进一步学习     
-# 2.删除事件的方式  
+- useCapture:可选参数，时一个布尔值，默认是false。学完DOM事件流后，我们再进一步学习    
+# 2.删除事件（解绑事件）   
+## 2-1.删除事件的方式  
 1.传统注册方式    
 eventTarget.onclick = null;  
 2.方法监听注册方式  
-1.eventTarget.renmoveEventListener(type,listener[,useCapture]);
+1.eventTarget.renmoveEventListener(type,listener[,useCapture]);   
+# 3.DOM事件流   
+事件流描述的是从页面中接收事件的顺序。  
+事件发生时会在节点之间按照特定的顺序传播，这个传播过程即DOM事件流。   
+DOM事件流分为3个阶段：   
+1.捕获阶段   
+2.当前目标阶段  
+3.冒泡阶段  
+- 事件冒泡：IE最早提出，事件开始时由最具体的元素接收，然后逐级向上传播到dom最顶级节点的过程。   
+- 事件捕获：网景最早提出，由DOM最顶层节点开始，然后逐级向下传播到到最具体的元素接收的过程。   
+### 注意:   
+1.JS代码中只能执行捕获或者冒泡其中一个阶段。   
+2。onclick和attchEvent只能得到冒泡阶段。   
+3.addEventListener(type,listenner[,useCapture])第三个参数如果是ture,表示在事件捕获阶段调用事件处理程序；如果是false(不写默认就是false)，表示在事件冒泡阶段调用事件处理程序。  
+4.实际开发中我们很少使用事件捕获，我们更关注事件冒泡。  
+5.有些事件是没有冒泡的，比如onblur,onfocus,onmouseenter,onmouseleave   
+6.事件冒泡有时候会带来麻烦，有时候又会帮助很巧妙的做某些事件。  
+# 4.事件对象  
+## 4-1.什么是事件对象   
+eventTarget.onclick = function(event) {}    
+eventTarget.addEventListener('click',function(event) {})   
+//这个event就是事件对象，我们还喜欢的写成e 或者evt    
+官方解释：event对象代表事件的状态，比如键盘按键的状态，鼠标的位置，鼠标的按钮状态。   
+简单理解：事件发生后，跟事件相关的一些列信息数据的集合都放到这个对象里，这个对象就是事件对象event，它有很多属性和方法。    
+比如：   
+1.谁绑定了这个事件。  
+2.鼠标触发事件的话，会得到鼠标的相关信息，比如鼠标位置。    
+## 4-2.事件对象的使用语法    
+eventTarget.onclick = function(event) {  
+  //这个event就是事件对象，我们还喜欢写成e或者evt  
+  }   
+  eventTarget.addEventListener('click',function(event) {   
+     //这个event就是事件对象，我们还喜欢写成e或者evt  
+  })   
+  这个event是个形参，系统帮我们设定为事件对象，不需要传递实参过去。   
+  当我们注册事件时，event对象就会被系统自动创建，并依次传递给事件监听器（事件处理函数）。  
+  ## 4-3.事件对象的兼容性方案   
+  事件对象本身的获取存在兼容问题：  
+  1.标准浏览器中是浏览器给方法传递的参数，只需要定义形参e就可以获取到。   
+  2.在IE6-8中，浏览器不会给方法传递，如果需要的话，需要到window.event中获取查找。   
+  解决：  
+  e = e || window.even;    
+  ## 4-4.事件对象的常见属性和方法    
+  事件对象属性方法|说明    
+  -|-   
+  e.target|返回触发事件的对象  标准   
+  e.srcElement|返回触发事件的对象  非标准ie6-8使用   
+  e.type|返回事件的类型，比如click mouseover 不带on   
+  e.cancelBubble|该属性阻止冒泡 非标准ie6-8使用   
+  e.returnValue|该属性 阻止默认事件（默认行为）非标准ie6-8使用比如不让链接跳转    
+  e.preventDefalt()|该方法组织默认事件（默认行为）标准 比如不让链接跳转   
+  e.stopPropagation()|阻止冒泡 标准   
+  # 5.阻止事件冒泡   
+  ## 5-1.阻止事件冒泡的两种方式    
+  事件冒泡：开始时由具体的元素接收，然后逐级向上传播到DOM最顶层节点。   
+  事件冒泡本身的特性，会带来的坏处，也会带来的好处，我们需要灵活掌握。    
+  阻止事件冒泡   
+  - 标准写法：利用事件对象里面的stopPropagation()方法    
+  
+
 
 
 
