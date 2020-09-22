@@ -25,19 +25,21 @@
 </head>
 
 <body>
+
     <div class="father">
         <div class="son"></div>
     </div>
 
     <script>
         var son = document.querySelector('.son')
-        son.addEventListener('click',function() {
+        son.addEventListener('click',function(e) {
             alert('son');
-        }, true);   
+            e.stopPropagation();
+        }, false);   
         var father = document.querySelector('.father')  
         father.addEventListener('click',function() {
             alert('father');
-        }, true);
+        }, false);
     </script>
 </body>
 

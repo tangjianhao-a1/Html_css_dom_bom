@@ -403,7 +403,58 @@ eventTarget.onclick = function(event) {
   事件冒泡本身的特性，会带来的坏处，也会带来的好处，我们需要灵活掌握。    
   阻止事件冒泡   
   - 标准写法：利用事件对象里面的stopPropagation()方法    
-  
+  # 6.事件委托（代理，委派）   
+  事件冒泡本身的特性，会带来的坏处，也会带来好处，需要我们灵活掌握，   
+  ### 事件委托的原理   
+  不是每个子节点单独设置事件监听器，而是事件监听器设置在其父节点上，然后利用冒泡原理影响设置每个子节点。   
+  以上案例：给ul注册点击事件，然后利用事件对象的target来找到当前点击的li，因为点击li，事件会冒泡到ul上，ul有注册事件，就会触发事件监听。   
+  事件委托的作用   
+  我们只操作了一次DOM，提高了程序的性能。   
+  # 7.常用的鼠标事件      
+  鼠标事件|触发条件   
+-|-
+onclick|鼠标点击左键触发  
+onmouseover|鼠标经过触发   
+onmouseout|鼠标离开触发  
+onfocus|获得鼠标焦点触发  
+onblur|失去鼠标焦点触发  
+onmousemove|鼠标移动触发   
+onmouseup|鼠标弹起触发  
+onmousedown|鼠标按下触发       
+## 7-1.常用的鼠标事件   
+1.禁止鼠标右键菜单   
+contextmenu主要控制应该何时显示上下文菜单，主要用于程序员取消默认的上下文菜单   
+document.addEventListener('contextmenu',function(e) {   
+  e.preventDefault();
+})   
+2.禁止鼠标选中（selectstart开始选中）   
+document.addEventListener('selectstart',function(e) {   
+  e.preventDefault();  
+})   
+## 7-2.鼠标事件对象   
+event对象代表事件的状态，跟事件相关的一系列信息的集合。现阶段我们主要是用鼠标事件对象   
+MouseEvent和键盘事件对象keyboardEvent.   
+鼠标事件对象|说明  
+-|-
+e.clientX|返回鼠标相对于浏览器窗口可视区的X坐标  
+e.clientY|返回鼠标相对于浏览器窗口可视区的Y坐标   
+e.pageX|返回鼠标相对于文档页面的X坐标IE9+支持  
+e.pageY|返回鼠标相对于文档页面的Y坐标IE9+支持    
+e.screenX|返回鼠标相对于电脑屏幕的X坐标   
+e.screenY|返回鼠标相对于电脑屏幕的Y坐标    
+# 8.常用键盘事件   
+事件除了使用鼠标触发，还可以使用键盘触发。   
+键盘事件|触发条件  
+-|-   
+onkeyup|某个键盘按键被松开时触发  
+onkeydown|某个键盘按键被按下时触发   
+onkeypress|某个键盘按键被按下时触发，但是它不识别功能键 比如ctrl,shift箭头等   
+注意：   
+1.如果使用addEventener不需要加on   
+2.onkeypress和前面2个的区别是，它不识别功能键   
+3.三个事件的执行顺序是 keydown -- keypress --keyup  
+
+
 
 
 
