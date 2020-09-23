@@ -452,7 +452,14 @@ onkeypress|某个键盘按键被按下时触发，但是它不识别功能键 �
 注意：   
 1.如果使用addEventener不需要加on   
 2.onkeypress和前面2个的区别是，它不识别功能键   
-3.三个事件的执行顺序是 keydown -- keypress --keyup  
+3.三个事件的执行顺序是 keydown -- keypress --keyup    
+## 8-2 键盘事件对象   
+键盘事件对象 属性|说明   
+-|-   
+keyCode|返回改键的ASCII值    
+注意：onkeydown和onkeyup不区分字母大小写，onkeypress区分字母大小写。   
+在实际开发中，我们更多的使用keydown和keyup，它能识别所有的键（包括功能键）   
+keypress不识别功能键，但是keyCode属性能区分大小写，返回不同的ASCII值
 
 
 
