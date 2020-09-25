@@ -59,6 +59,12 @@
             </ul>
         </div>
 
+        <div class="box-lxq">
+            李晓琴
+            <img src="../img/LXQ.png" alt="">
+            <i class="close-btn">x</i>
+        </div>
+
     </div>
     <div class="foots">
         <div class="leftss">
@@ -82,6 +88,24 @@
             </ul>
         </div>
     </div>
+
 </body>
 
+<script>
+    var lxq = document.querySelector('.box-lxq');   
+    var btn = document.querySelector('.close-btn');   
+    setTimeout(function() {
+        lxq.style.display = 'block';
+    },7000)  
+/* 
+    btn.addEventListener('click',function() {
+        lxq.style.display = 'none';
+    })
+ */
+ document.addEventListener('keyup',function(e) {
+            if(e.keyCode === 83) {
+                lxq.style.display = 'none';
+            }
+        })
+</script>
 </html>

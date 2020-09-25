@@ -33,4 +33,47 @@ window.onload是窗口（页面）加载事件，当文档内容完全加载完�
 注意：  
 1.有了window.onload就可以把JS代码写到页面元素的上方，因为onload是等页面内容全部加载完毕，再去执行处理函数。   
 2.window.onload传统注册事件方式只能写一次，如果有多个，会以最后一个window.onload为准。   
-3.如果使用了addEventLi
+3.如果使用了addEventListener则没有限制  
+document.addEventener('DOMContenLoaded',function() {})    
+DOMContentLoaded事件触发时，仅当DOM加载完成，不包括样式表，图片，flash等等。    
+Ie9以上才支持   
+如果页面的图片很多的话，从用户访问到onload触发可能需要较长的时间。交互效果就不能实现，必然影响用户体验，此时用DOMContentLoaded事件比较合适。   
+## 2-2.调整窗口大小事件   
+window.onresize = function() {}    
+window.addEventListener('resize',function() {});    
+window.onresize是调整窗口大小加载事件。当触发时就调用的处理函数。   
+注意：  
+1.只要窗口大小发生像素变化，就会触发这个事件。   
+2.我们经常利用这个事件完成响应式布局。window.innerWidth当前屏幕的宽度   
+# 3.定时器   
+## 3-1 两种定时器    
+window对象给我们提供了2个非常好用的方法-定时器。   
+- setTimeout()   
+- setInterval()    
+## 3-2 setTimeout()定时器    
+window.setTimeout(调用函数，[延迟的毫秒数])；  
+setTimeout()方法用于设置一个定时器，该定时器在定时器到期后执行调用函数。  
+注意 ：  
+1.window可以省略。   
+2.这个调用函数可以直接写函数，或者写函数名或者采取字符串'函数名（）'三种形式，第三种不推荐。  
+3.延迟的毫秒数省略默认是0，如果写，必须是毫秒。  
+4.因为定时器可能有很多，所以我们经常给定时器赋值一个标识符。   
+setTimeout()这个调用函数我们也称为回调函数callback   
+普通函数是按照代码顺序直接调用。    
+而这个函数，需要等待时间，时间到了才去调用这个函数，因此称为回调函数。   
+简单理解：回调，就是回头调用的意思，上一件事干完，在回头调用这个函数。  
+以前的element.onclick = function() {} 或者 element.addEventListener("click",fn);里面的函数也是回调函数。    
+## 3-3.停止setTimeout()定时器   
+window.clearTimeout(timeoutId)    
+clearTimeout()方法取消了先前通过调用setTimeout()建立的定时器。   
+注意 ：   
+1.window可以省略。    
+## 3-4.setInterval(回调函数，[间隔的毫秒数])；     
+setInterval()方法重复调用一个函数，每隔这个时间，就去调用一次回调函数    
+注意：   
+1.window可以省略。    
+2.这个调用函数可以直接写函数，或者写函数名或者采取字符串'函数名（）'三种形式。   
+3.间隔的毫秒数省略默认是0，如果写，必须是毫秒，表示每隔多少毫秒就自动调用这个函数。   
+4.因为定时器可能有很多，所以我们经常给定时器赋值一个标识符。
+
+

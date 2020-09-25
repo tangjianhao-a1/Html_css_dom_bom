@@ -221,3 +221,31 @@ input,button {
     color: #9195a3;
     margin-right: 20px;
 }
+
+.box-lxq {
+    position: relative;
+    display: none;
+    width: 223px;
+    height: 311px;
+    border: 1px solid #ccc;
+    margin: 100px auto;
+    font-size: 12px;
+    text-align:center;
+    color: #f40;
+
+}
+.box-lxq img {
+    width: 223px;
+    margin-top: 2px;
+
+}
+.close-btn {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 15px;
+    height: 16px;
+    border: 1px solid #ccc;
+    line-height:14px;
+    cursor:pointer;
+}
