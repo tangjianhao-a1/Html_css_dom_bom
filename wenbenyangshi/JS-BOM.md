@@ -76,4 +76,9 @@ setInterval()方法重复调用一个函数，每隔这个时间，就去调用�
 3.间隔的毫秒数省略默认是0，如果写，必须是毫秒，表示每隔多少毫秒就自动调用这个函数。   
 4.因为定时器可能有很多，所以我们经常给定时器赋值一个标识符。
 
-
+## 3-5.停止setInterval()定时器   
+window.clearInterval(intervalID);   
+clearInterval()方法取消了先前通过调用setInterval()建立的定时器。   
+注意：  
+1.window可以省略。   
+2.里面的参数就是定时器的标识符。
