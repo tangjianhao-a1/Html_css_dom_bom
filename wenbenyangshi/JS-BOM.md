@@ -81,4 +81,9 @@ window.clearInterval(intervalID);
 clearInterval()方法取消了先前通过调用setInterval()建立的定时器。   
 注意：  
 1.window可以省略。   
-2.里面的参数就是定时器的标识符。
+2.里面的参数就是定时器的标识符。    
+## 3-6.this     
+this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，一般情况下this的最终的是那个调用它的对象       
+现阶段，我们先了解一下几个this指向    
+1.全局作用域或者普通函数中this指向全局对象window（注意定时器里面的this指向window）
+
