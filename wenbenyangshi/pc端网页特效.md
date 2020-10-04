@@ -27,4 +27,12 @@ style
 - style.width获得不包含padding和border的值   
 - style.width是可读写属性，可以获取也可以赋值   
 - 所以我们想要给元素更改值，则需要用style改变   
-
+# 2.元素可视区client系列     
+client翻译过来就是客户端，我们使用client系列的相关属性来获取元素可视区的相关信息，通过client系列的相关属性可以动态的得到该元素的边框大小，元素大小等。  
+clicent系列属性|作用  
+-|-   
+element.clientTop|返回元素上边框的大小   
+element.clientLeft|返回元素左边框的大小    
+element.clientWidth|返回自身包括padding,内容区的宽度，不含边框，返回数值不带单位   
+element.clientHeight|返回自身包括padding,内容区的高度，不含边框，返回数值不带单位
+ 
