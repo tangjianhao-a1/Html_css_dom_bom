@@ -62,6 +62,7 @@
 <body>
     <div class="LXQ">
         <img src="../img/LXQ.png" alt="" class="one">
+        
         <div class="mask"></div>
         <div class="big">
             <img src="..//img/_20201003190424.png" alt="" class="bigImg">
@@ -101,7 +102,7 @@
             if (maskY <= 0) {
                 maskY = 0;
             } else if (maskY >= LXQ.offsetHeight - mask.offsetHeight) {
-                maskY = LXQ.offsetHeight - mask.offsetHeight;
+                maskY = maskMax;
             }
             mask.style.left = maskX + 'px';
             mask.style.top = maskY + 'px';
