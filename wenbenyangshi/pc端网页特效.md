@@ -35,4 +35,6 @@ element.clientTop|返回元素上边框的大小
 element.clientLeft|返回元素左边框的大小    
 element.clientWidth|返回自身包括padding,内容区的宽度，不含边框，返回数值不带单位   
 element.clientHeight|返回自身包括padding,内容区的高度，不含边框，返回数值不带单位
- 
+# 3.元素滚动scroll系列    
+## 3-1.元素scroll系列属性    
+scroll翻译过来就是滚动，我们使用scroll系列的相关属性可以动态得到该元素的大小，滚动距离等
