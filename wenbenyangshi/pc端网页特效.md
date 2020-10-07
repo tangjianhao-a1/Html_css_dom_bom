@@ -37,4 +37,13 @@ element.clientWidth|返回自身包括padding,内容区的宽度，不含边框�
 element.clientHeight|返回自身包括padding,内容区的高度，不含边框，返回数值不带单位
 # 3.元素滚动scroll系列    
 ## 3-1.元素scroll系列属性    
-scroll翻译过来就是滚动，我们使用scroll系列的相关属性可以动态得到该元素的大小，滚动距离等
+scroll翻译过来就是滚动，我们使用scroll系列的相关属性可以动态得到该元素的大小，滚动距离等。    
+scroll系列属性|作用  
+-|-   
+element.scrollTpop | 返回被卷去的上侧距离，返回数值不带单位   
+element.scrollLeft|返回被卷去的左侧距离，返回数值不带单位   
+element.scrollWidth|返回自身实际的宽度，不含边框，返回数值不带单位  
+element.scrollHeight|返回自身实际的高度，不含边框，返回数值不带单位    
+## 3-2.页面被卷去的头部    
+如果浏览器的高或宽度不足以显示整个页面时，会自动出现滚动条，当滚动条向下滚动时，页面上面被隐藏掉的高度，我们就称为页面被卷去的头部。滚动条在滚动时会触发onscroll事件。
+
