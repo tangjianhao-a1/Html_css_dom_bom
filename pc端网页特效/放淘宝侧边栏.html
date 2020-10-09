@@ -29,6 +29,9 @@
            width: 35px;
            height: 100px;  
            background-color: pink;
+       }  
+       span {
+           display: none;
        }
     </style>
 </head>
@@ -38,6 +41,35 @@
     </div>
     <div class="headerw">头部区域</div>
     <div class="bannerw">banner区域</div>  
-    <div class="mainw">主体部分</div>
+    <div class="mainw">主体部分</div>   
+    <script>
+     //1.获取元素
+    var sliderbar = document.querySelector('.slider-bar');    
+    var banner = document.querySelector('.bannerw');  
+    var bannerTop = banner.offsetTop;  
+    var bannerbarTop = sliderbar.offsetTop - bannerTop;
+    //获取main = 主体元素   
+    var main = document.querySelector('.mainw');   
+    var goBack = document.querySelector('.goBack');  
+    var mainTop = main.offsetTop;
+     //2.页面滚动事件 scroll   
+     document.addEventListener('scroll',function() {
+         //window.pageYOffset 页面被卷去的头部;
+         //console.log(window.pageYOffset);
+         //3.当我们页面被卷去的头部大于等于了172 此时 侧边栏就要改为固定定位  
+         if (window.pageYOffset >= bannerTop) {
+             sliderbar.style.position = 'fixed'; 
+             sliderbar.style.top = bannerbarTop + 'px'
+         } else {
+             sliderbar.style.position = 'absolute';    
+             sliderbar.style.top = '328px'
+         }
+         if (window.pageYOffset >= bannerTop) {
+            goBack.style.display = 'block';
+         } else {
+             goBack.style.display = 'none';
+         }
+     })
+    </script>
 </body>
 </html>
