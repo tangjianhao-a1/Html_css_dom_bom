@@ -45,5 +45,22 @@ element.scrollLeft|返回被卷去的左侧距离，返回数值不带单位
 element.scrollWidth|返回自身实际的宽度，不含边框，返回数值不带单位  
 element.scrollHeight|返回自身实际的高度，不含边框，返回数值不带单位    
 ## 3-2.页面被卷去的头部    
-如果浏览器的高或宽度不足以显示整个页面时，会自动出现滚动条，当滚动条向下滚动时，页面上面被隐藏掉的高度，我们就称为页面被卷去的头部。滚动条在滚动时会触发onscroll事件。
+如果浏览器的高或宽度不足以显示整个页面时，会自动出现滚动条，当滚动条向下滚动时，页面上面被隐藏掉的高度，我们就称为页面被卷去的头部。滚动条在滚动时会触发onscroll事件。    
+# 三大系列总结    
+三大系列大小对比|作用   
+-|-  
+element.offsetWidth|返回自身包括padding.边框，内容区的宽度，返回值不带单位    
+element.clientWidth|返回自身包括padding,内容区的宽度，不含边框，返回数值不带单位   
+element.scrollWidth|返回自身实际的宽度，不含边框，返回数值不带单位    
+他们的用法：   
+1.offset系列经常用于获取元素位置 offsetLeft  offsetTop   
+2.client经常用于获取元素大小clientWidth  clientHeight   
+3.scroll经常用于获取滚动距离scrollTop scrollLeft   
+4.注意页面滚动距离通过window.pageXoffLeft获得  
+# mouseenter鼠标事件   
+- 当鼠标移动到元素上时就会触发mouseeter事件   
+- 类似mouseover，他们两者之间的差别是    
+- mouseover鼠标经过自身盒子会触发，经过子盒子还会触发，mouseeter只经过自身盒子触发      
+- 之所以这样，就是因为mouseeter不会冒泡
+
 
