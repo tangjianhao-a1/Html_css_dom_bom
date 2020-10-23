@@ -1,21 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的一个vue</title>  
-    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
-</head>
+<html>
 <body>
-    <div id="app">{{message}}</div>   
+
+<h1>XMLHttpRequest 对象</h1>
+
+<button type="button" onclick="loadDoc()">请求数据</button>
+
+<p id="demo"></p>
+
 <script>
-    new Vue ({
-        el : '#app',
-        data: {
-        message: '你的第一'
-        }
-    })
+/**
+ * 对象变数组
+ * @param {*} obj  {"a": 1, "b": 2}  {"c": 3, "d": 4}
+ * @returns  {a: 1, b: 2, c: 3, d: 4}
+ */
+ function test4(obj1, obj2) {
+    var obj = Object.assign(obj1, obj2)  
+    return obj
+    }  
+    var re4 = test4({"a": 1, "b": 2}, {"c": 3, "d": 4})  
+    console.log(re4);
+  
 </script>
-   
+ 
 </body>
 </html>
