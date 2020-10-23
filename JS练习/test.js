@@ -12,23 +12,16 @@
 //5.返回新数组   
 //6.入参，打印结果
 function test1(list) {  
-    //建立空数组 
-      var newArr = [];
-      //2.遍历数组里面的对象
-    for( var i = 0; i < list.length; i++) {
-        //3.获取变量里面的username属性值 
-       var itm = list[i];   
-       var name = itm.username  
-       //newArr[newArr.length] = name;
-       //4.把获取到的值给添加到新数组里 
-       newArr.push(name);
-    }
-    //5.返回新数组 
-    return newArr
+  var newArr = [];  
+  for( var i = 0; i < list.length; i++) {
+      var name = list[i];   
+      var itl = name.username;  
+      newArr.push(itl);
+  };  
+  return newArr
 };  
-//6.入参，打印结果
-  var re = test1([{username: "张三", addr: "北京"}, {username: "李四", addr: "北京"}, {username: "王五", addr: "上海"}]);
-  console.log(re);
+var re = test1( [{username: "张三", addr: "北京"}, {username: "李四", addr: "北京"}, {username: "王五", addr: "上海"}]);  
+console.log(re);
 //["张三", "李四", :王五:] 
 /**
  * 考察字符串操作 
@@ -37,16 +30,11 @@ function test1(list) {
  * @returns "美女"
  */
 function test2(str) {   
-    //1.把str值赋给rel3变量
-    var rel3 = str;     
-    //2.用RedExp这个方法创建正则，属性g用于全局匹配，i用于区分大小写，m用于多行匹配
-    var reg = new RegExp('.pdf','g');    
-    var beg = rel3.replace(reg,'');  
-    return beg 
+  var re1 = str.replace(/.pdf/i,'' )  
+  return re1
 };
-
- var pat = test2("语文课本.pdf");// "语文课本.pdf" 语文课本  
- console.log(pat);
+var ptp = test2("语文课本.pdf")   
+console.log(ptp);
 /**
  * 对象变数组
  * @param {*} obj  {"a": 1, "b": 2} 
@@ -59,39 +47,26 @@ function test2(str) {
 //5.给函数入参  
 //6.最后打印
 function test3(obj) {
-    //创建空数组
-   var newArr = [];    
-   //遍历对象
-   for(var i in obj) {  
-      
-       //创建新数组里的对象
-       var by = {};  
-     
-       //赋值第一次遍历，第二次遍历；
-       by[i] = obj[i];
-      
-       newArr.push(by) 
-      
-    
- }
- return newArr;
+  var newArr = [];  
+  for(var i in obj) {
+      var objs = {};   
+     objs[i] = obj[i];  
+     newArr.push(objs);  
+
+  }
+return newArr
 };  
-var re2 = test3({"a": 1, "b": 2});   
-console.log(re2);  
+var re3 = test3({"a": 1, "b": 2} );  
+console.log(re3);
 /**
  * 对象变数组
  * @param {*} obj  {"a": 1, "b": 2}  {"c": 3, "d": 4}
  * @returns  {a: 1, b: 2, c: 3, d: 4}
  */
 function test4(obj1, obj2) {
-    //1.第一个对象变量装起来
-     var arr1 = obj1;  
-     //2.第二个对象变量装起来 
-     var arr2 = obj2; 
-     //3.通过Objct.assign合并对象
-     var obj = Object.assign(arr1,arr2)  
-     return obj
-    }
-    var rel1 =  test4({"a": 1, "b": 2},{c: 3, d: 4});    
-    console.log(rel1);
+  var obj = Object.assign(obj1, obj2)  
+  return obj
+  }  
+  var re4 = test4({"a": 1, "b": 2}, {"c": 3, "d": 4})  
+  console.log(re4);
    
