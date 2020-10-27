@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>土豆网</title>
+    <style>
+        .box {
+            position: relative;
+            width: 444px;
+            height: 320px;
+            background-color: burlywood;
+            margin: 200px auto;
+        }
+
+        .box img {
+            position: absolute;
+            width: 100%
+        }
+
+        .box::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 444px;
+            height: 320px;
+            background: rgba(0, 12, 24, 0.3) url(../img/player.png) no-repeat center;
+            display: none;
+        }
+
+        .box:hover::after {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="../img/toudou-1.png">
+
+    </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="tjh">开始定时</button>
+    <button class="lxq">结束定时</button>
+    <script>
+        var tjh = document.querySelector('.tjh');
+        var lxq = document.querySelector('.lxq');
+        var timer = null;
+        tjh.addEventListener('click', function () {
+            timer = setInterval(function () {
+                console.log('漂亮');
+            }, 1000)
+        })
+
+        lxq.addEventListener('click', function () {
+            clearInterval(timer);
+        })
+    </script>
+</body>
+
+</html>
